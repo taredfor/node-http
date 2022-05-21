@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: action/setup-node@v3
+        with:
+          node-version: 16.15.0
+      - run: node --version
+      - uses: actions/upload-artifact@v3
+        with:
+          name: main.js
+          path: ./main.js
