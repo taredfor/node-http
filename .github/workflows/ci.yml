@@ -16,6 +16,7 @@ jobs:
           node-version: 16.15.0
       - run: node --version
       - uses: actions/upload-artifact@v3
-        with:
-          name: main.js
+        with: |
+          name: my-artifact
           path: ./main.js
+          path: ./package.json
